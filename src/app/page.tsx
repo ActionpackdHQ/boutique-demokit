@@ -110,20 +110,17 @@ export default function Home() {
 
       <h2>What our agents do</h2>
       <div className="jobs">
-        <div className="card job">
+        <div className="card job shop">
           <b>Shop Agent</b>
-          <br />
-          Answers price, size and stock questions. Shares new arrivals.
+          <p>Answers price, size and stock questions. Shares new arrivals.</p>
         </div>
-        <div className="card job">
+        <div className="card job pay">
           <b>Payment Agent</b>
-          <br />
-          Sends payment links and gentle reminders.
+          <p>Sends payment links and gentle reminders.</p>
         </div>
-        <div className="card job">
+        <div className="card job follow">
           <b>Follow-up Agent</b>
-          <br />
-          Sends &quot;ready for pickup&quot; and alteration reminders.
+          <p>Sends &quot;ready for pickup&quot; and alteration reminders.</p>
         </div>
       </div>
       <div className="card control">
@@ -135,10 +132,9 @@ export default function Home() {
       <p>Give us the job. An agent, a bot, a shop, or a site does it.</p>
       <div className="offers">
         {PRODUCTS.map((product) => (
-          <div className="card offer" key={product.title}>
+          <div className={`card offer ${product.title.toLowerCase()}`} key={product.title}>
             <b>{product.title}</b>
-            <br />
-            {product.body}
+            <p>{product.body}</p>
           </div>
         ))}
       </div>

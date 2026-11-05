@@ -303,30 +303,71 @@
 .kit .card p:last-child {
   margin-bottom: 0;
 }
-.kit .card.job {
-  background: #fff;
-  border-left: 6px solid #7a1f3d;
+.kit .jobs,
+.kit .offers {
+  display: grid;
+  gap: 10px;
 }
-.kit .card.job b {
-  color: #7a1f3d;
+.kit .card.job,
+.kit .card.offer {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 1px 0 rgba(42, 26, 31, 0.06);
 }
-.kit .jobs .card.job:nth-child(even) {
-  background: #f6e7ec;
+.kit .card.job b,
+.kit .card.offer b {
+  display: block;
+  padding: 10px 14px;
+  color: #fff;
+}
+.kit .card.job p,
+.kit .card.offer p {
+  margin: 0;
+  padding: 12px 14px 14px;
+}
+.kit .job.shop {
+  background: #fbf6ef;
+}
+.kit .job.shop b {
+  background: #7a1f3d;
+}
+.kit .job.pay {
+  background: #e8f8ee;
+}
+.kit .job.pay b {
+  background: #128a45;
+}
+.kit .job.follow {
+  background: #f3efe4;
+}
+.kit .job.follow b {
+  background: #8a5a2b;
 }
 .kit .card.control {
   background: #7a1f3d;
   color: #fff;
 }
-.kit .offers .card.offer:nth-child(odd) {
+.kit .offer.agents b {
   background: #7a1f3d;
-  color: #fff;
 }
-.kit .offers .card.offer:nth-child(even) {
-  background: #fff;
-  box-shadow: inset 0 0 0 2px #7a1f3d;
+.kit .offer.bots {
+  background: #e8f8ee;
 }
-.kit .offers .card.offer:nth-child(even) b {
-  color: #7a1f3d;
+.kit .offer.bots b {
+  background: #128a45;
+}
+.kit .offer.shops {
+  background: #f3efe4;
+}
+.kit .offer.shops b {
+  background: #8a5a2b;
+}
+.kit .offer.sites {
+  background: #f7eef2;
+}
+.kit .offer.sites b {
+  background: #2a1a1f;
 }
 .kit video.vid {
   width: 100%;
