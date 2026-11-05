@@ -2,6 +2,7 @@ import { BoutiqueFrame } from "@/components/boutique-frame";
 import { CtaLink } from "@/components/cta-link";
 import {
   AAVARNA_DEMO,
+  TRY_IT_YOURSELF,
   ACTIONPACKD_SITE,
   ACTIONPACKD_WHATSAPP_DISPLAY,
   ACTIONPACKD_WHATSAPP_E164,
@@ -31,7 +32,7 @@ export default function Home() {
           WhatsApp for you. They share new arrivals, send payment links and remind customers about
           pickup.
         </p>
-        <CtaLink href={AAVARNA_DEMO}>Try it yourself</CtaLink>
+        <CtaLink href={TRY_IT_YOURSELF}>Try it yourself</CtaLink>
         <CtaLink href={shopHref} variant="secondary">
           Message us on WhatsApp to get it
         </CtaLink>
@@ -95,7 +96,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <CtaLink href={AAVARNA_DEMO}>Try it yourself</CtaLink>
+      <CtaLink href={TRY_IT_YOURSELF}>Try it yourself</CtaLink>
 
       <h2>Sample collection</h2>
       <p>Your own photos go here. The agent sends them to customers.</p>
@@ -155,13 +156,13 @@ export default function Home() {
         The live sample is Aavarna: custom stitching, blouses, and an assistant, in English, Tamil,
         and Tanglish.
       </p>
-      <CtaLink href={AAVARNA_DEMO}>Try it yourself</CtaLink>
+      <CtaLink href={TRY_IT_YOURSELF}>Try it yourself</CtaLink>
       <BoutiqueFrame />
 
       <CtaLink href={PDF_HREF} download="Actionpackd-demo-kit.pdf" variant="outline">
         Download the 1-page sheet (PDF)
       </CtaLink>
-      <CtaLink href={AAVARNA_DEMO}>Try it yourself</CtaLink>
+      <CtaLink href={TRY_IT_YOURSELF}>Try it yourself</CtaLink>
       <CtaLink href={shopHref} variant="secondary">
         Message us on WhatsApp to get it
       </CtaLink>

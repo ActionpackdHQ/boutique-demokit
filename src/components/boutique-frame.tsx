@@ -51,7 +51,10 @@ export function BoutiqueFrame() {
           />
         </div>
       )}
-      <p className="muted">If the preview does not load, use Try it yourself to open Aavarna.</p>
+      <p className="muted">
+        If the preview does not load, open{" "}
+        <a href={AAVARNA_DEMO}>Aavarna</a>.
+      </p>
     </div>
   );
 }

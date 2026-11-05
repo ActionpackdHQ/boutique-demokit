@@ -6,6 +6,8 @@ export const ACTIONPACKD_WHATSAPP_E164 = "918190007072";
 export const ACTIONPACKD_SITE = "https://actionpackd.com";
 export const HELLO_AGENT = "https://hello.actionpackd.com";
 export const AAVARNA_DEMO = "https://aavarna-boutique.vercel.app/";
+export const TRY_IT_YOURSELF =
+  "https://api.whatsapp.com/send/?phone=918190007072&text=Hi%2C+I+want+to+try+the+boutique+agent+demo&type=phone_number&app_absent=0";
 export const PDF_HREF = "/actionpackd-demo-kit.pdf";
 
 export function whatsAppHref(text: string) {
