@@ -26,9 +26,6 @@ export default function Home() {
         </p>
         <CtaLink href={AAVARNA_DEMO}>Open the Aavarna demo</CtaLink>
         <CtaLink href={TRY_IT_YOURSELF}>Try it yourself</CtaLink>
-        <CtaLink href={shopHref} variant="secondary">
-          Message us on WhatsApp to get it
-        </CtaLink>
         <img
           src="/kit/hero-phone.webp"
           alt="Phone showing a boutique WhatsApp chat"
