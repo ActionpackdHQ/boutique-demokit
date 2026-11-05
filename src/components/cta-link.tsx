@@ -1,6 +1,5 @@
 import type { ReactNode } from "react";
 
-import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 type CtaLinkProps = {
@@ -10,6 +9,13 @@ type CtaLinkProps = {
   className?: string;
   download?: boolean | string;
   external?: boolean;
+};
+
+const variants = {
+  default: "btn btn-g",
+  secondary: "btn btn-m",
+  outline: "btn btn-o",
+  ghost: "kit-back",
 };
 
 export function CtaLink({
@@ -27,11 +33,7 @@ export function CtaLink({
       download={download}
       target={opensNewTab ? "_blank" : undefined}
       rel={opensNewTab ? "noopener noreferrer" : undefined}
-      className={cn(
-        buttonVariants({ variant, size: "lg" }),
-        "h-12 w-full rounded-2xl px-4 text-base font-semibold",
-        className,
-      )}
+      className={cn(variants[variant], className)}
     >
       {children}
     </a>

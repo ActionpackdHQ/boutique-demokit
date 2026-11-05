@@ -2,9 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-import { buttonVariants } from "@/components/ui/button";
 import { AAVARNA_DEMO } from "@/lib/site";
-import { cn } from "@/lib/utils";
 
 export function BoutiqueFrame() {
   const host = useRef<HTMLDivElement>(null);
@@ -32,45 +30,28 @@ export function BoutiqueFrame() {
   }, [shouldLoad]);
 
   return (
-    <div ref={host} className="overflow-hidden rounded-3xl bg-card ring-1 ring-foreground/10">
+    <div ref={host} className="frame">
       {!shouldLoad && (
-        <div className="flex min-h-56 flex-col items-start justify-center gap-3 p-4">
-          <p className="text-[15px] leading-relaxed text-muted-foreground">
-            The Aavarna preview stays unloaded until you reach it, so the rest of this page opens
-            quickly.
-          </p>
-          <button
-            type="button"
-            className={cn(
-              buttonVariants({ size: "lg" }),
-              "h-12 rounded-2xl px-4 text-base font-semibold",
-            )}
-            onClick={() => setShouldLoad(true)}
-          >
+        <div className="frame-hold">
+          <p>The Aavarna preview stays unloaded until you reach it, so this page opens quickly.</p>
+          <button type="button" className="btn btn-g" onClick={() => setShouldLoad(true)}>
             Show the boutique here
           </button>
         </div>
       )}
       {shouldLoad && (
-        <div className="relative h-[70vh] min-h-[28rem] bg-background">
-          {status === "loading" && (
-            <p className="absolute inset-x-0 top-4 z-10 text-center text-sm text-muted-foreground">
-              Loading the Aavarna boutique demo…
-            </p>
-          )}
+        <div className="frame-view">
+          {status === "loading" && <p className="frame-status">Loading the Aavarna boutique demo…</p>}
           <iframe
             title="Aavarna boutique demo"
             src={AAVARNA_DEMO}
-            className="h-full w-full border-0"
             loading="lazy"
             onLoad={() => setStatus("ready")}
             referrerPolicy="strict-origin-when-cross-origin"
           />
         </div>
       )}
-      <p className="border-t border-foreground/10 px-4 py-3 text-sm leading-relaxed text-muted-foreground">
-        If the preview does not load, use Try it yourself to open Aavarna in a new tab.
-      </p>
+      <p className="muted">If the preview does not load, use Try it yourself to open Aavarna.</p>
     </div>
   );
 }
