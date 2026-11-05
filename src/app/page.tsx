@@ -24,6 +24,7 @@ export default function Home() {
           WhatsApp for you. They share new arrivals, send payment links and remind customers about
           pickup.
         </p>
+        <CtaLink href={AAVARNA_DEMO}>Open the Aavarna demo</CtaLink>
         <CtaLink href={TRY_IT_YOURSELF}>Try it yourself</CtaLink>
         <CtaLink href={shopHref} variant="secondary">
           Message us on WhatsApp to get it
@@ -144,9 +145,7 @@ export default function Home() {
         The live sample is Aavarna: custom stitching, blouses, and an assistant, in English, Tamil,
         and Tanglish.
       </p>
-      <p>
-        <a href={AAVARNA_DEMO}>Open the Aavarna demo</a>
-      </p>
+      <CtaLink href={AAVARNA_DEMO}>Open the Aavarna demo</CtaLink>
 
       <CtaLink href={PDF_HREF} download="Actionpackd-demo-kit.pdf" variant="outline">
         Download the 1-page sheet (PDF)
