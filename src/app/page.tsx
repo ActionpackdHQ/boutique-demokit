@@ -1,4 +1,3 @@
-import { BoutiqueFrame } from "@/components/boutique-frame";
 import { CtaLink } from "@/components/cta-link";
 import {
   AAVARNA_DEMO,
@@ -156,8 +155,9 @@ export default function Home() {
         The live sample is Aavarna: custom stitching, blouses, and an assistant, in English, Tamil,
         and Tanglish.
       </p>
-      <CtaLink href={TRY_IT_YOURSELF}>Try it yourself</CtaLink>
-      <BoutiqueFrame />
+      <p>
+        <a href={AAVARNA_DEMO}>Open the Aavarna demo</a>
+      </p>
 
       <CtaLink href={PDF_HREF} download="Actionpackd-demo-kit.pdf" variant="outline">
         Download the 1-page sheet (PDF)
