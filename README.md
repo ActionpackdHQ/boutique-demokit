@@ -2,7 +2,7 @@
 
 Mobile-first sales page for Actionpackd. It shows **Agents, Bots, Shops, and Sites**, and links the [Aavarna boutique demo](https://aavarna-boutique.vercel.app/).
 
-No account, database, or API key. Visitors reach the team at +91 733 964 0064, 87543 66890, or [hello.actionpackd.com](https://hello.actionpackd.com).
+No account, database, or API key. Visitors reach the team at +91 733 964 0064, +91 87543 66890, or [hello.actionpackd.com](https://hello.actionpackd.com).
 
 ## Run locally
 

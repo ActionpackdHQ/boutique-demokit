@@ -7,7 +7,7 @@ export const ACTIONPACKD_SITE = "https://actionpackd.com";
 export const HELLO_AGENT = "https://hello.actionpackd.com";
 export const CONTACT_NUMBERS = [
   { display: "+91 733 964 0064", tel: "+917339640064" },
-  { display: "87543 66890", tel: "+918754366890" },
+  { display: "+91 87543 66890", tel: "+918754366890" },
 ] as const;
 export const AAVARNA_DEMO = "https://aavarna-boutique.vercel.app/";
 export const TRY_IT_YOURSELF =

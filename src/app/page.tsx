@@ -158,12 +158,15 @@ export default function Home() {
 
       <h2 id="contact">Contact</h2>
       <div className="card contact-card">
-        {CONTACT_NUMBERS.map((number) => (
-          <a key={number.tel} className="contact-line" href={`tel:${number.tel}`}>
-            <span>Call</span>
-            {number.display}
-          </a>
-        ))}
+        <p className="contact-kicker">Call</p>
+        <p className="contact-line">
+          {CONTACT_NUMBERS.map((number, index) => (
+            <span key={number.tel}>
+              {index > 0 ? " / " : null}
+              <a href={`tel:${number.tel}`}>{number.display}</a>
+            </span>
+          ))}
+        </p>
       </div>
       <CtaLink href={HELLO_AGENT}>hello.actionpackd.com</CtaLink>
 
