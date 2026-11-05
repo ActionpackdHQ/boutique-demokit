@@ -150,7 +150,6 @@ export default function Home() {
       <CtaLink href={PDF_HREF} download="Actionpackd-demo-kit.pdf" variant="outline">
         Download the 1-page sheet (PDF)
       </CtaLink>
-      <CtaLink href={TRY_IT_YOURSELF}>Try it yourself</CtaLink>
       <CtaLink href={shopHref} variant="secondary">
         Message us on WhatsApp to get it
       </CtaLink>
