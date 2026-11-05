@@ -345,10 +345,8 @@
   background: linear-gradient(180deg, #fff 0%, #f8eef2 100%);
   box-shadow: inset 4px 0 0 #7a1f3d, 0 10px 24px rgba(42, 26, 31, 0.08);
 }
-.kit .job.shop .mark,
-.kit .job.shop b {
+.kit .job.shop .mark {
   background: #7a1f3d;
-  color: #fff;
 }
 .kit .job.shop b {
   background: none;
