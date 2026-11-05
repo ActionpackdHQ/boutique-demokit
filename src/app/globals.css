@@ -306,11 +306,10 @@
 .kit video.vid {
   width: 100%;
   height: auto;
-  max-height: 70vh;
+  aspect-ratio: 9 / 16;
   border-radius: 14px;
-  background: #2a1a1f;
   display: block;
-  object-fit: contain;
+  background: #111;
 }
 .kit footer {
   text-align: center;

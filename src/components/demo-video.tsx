@@ -9,15 +9,19 @@ export function DemoVideo() {
     const video = videoRef.current;
     if (!video) return;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry?.isIntersecting) return;
-        video.preload = "metadata";
-        video.load();
-        observer.disconnect();
-      },
-      { rootMargin: "240px 0px" },
-    );
+    const playWhenVisible = ([entry]: IntersectionObserverEntry[]) => {
+      if (!entry) return;
+      if (entry.isIntersecting && entry.intersectionRatio >= 0.45) {
+        video.preload = "auto";
+        void video.play().catch(() => undefined);
+        return;
+      }
+      video.pause();
+    };
+
+    const observer = new IntersectionObserver(playWhenVisible, {
+      threshold: [0, 0.45, 0.7],
+    });
     observer.observe(video);
     return () => observer.disconnect();
   }, []);
