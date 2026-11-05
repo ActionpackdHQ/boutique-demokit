@@ -111,16 +111,25 @@ export default function Home() {
       <h2>What our agents do</h2>
       <div className="jobs">
         <div className="card job shop">
-          <b>Shop Agent</b>
-          <p>Answers price, size and stock questions. Shares new arrivals.</p>
+          <span className="mark" aria-hidden="true">S</span>
+          <div>
+            <b>Shop Agent</b>
+            <p>Answers price, size and stock questions. Shares new arrivals.</p>
+          </div>
         </div>
         <div className="card job pay">
-          <b>Payment Agent</b>
-          <p>Sends payment links and gentle reminders.</p>
+          <span className="mark" aria-hidden="true">P</span>
+          <div>
+            <b>Payment Agent</b>
+            <p>Sends payment links and gentle reminders.</p>
+          </div>
         </div>
         <div className="card job follow">
-          <b>Follow-up Agent</b>
-          <p>Sends &quot;ready for pickup&quot; and alteration reminders.</p>
+          <span className="mark" aria-hidden="true">F</span>
+          <div>
+            <b>Follow-up Agent</b>
+            <p>Sends &quot;ready for pickup&quot; and alteration reminders.</p>
+          </div>
         </div>
       </div>
       <div className="card control">
@@ -133,8 +142,11 @@ export default function Home() {
       <div className="offers">
         {PRODUCTS.map((product) => (
           <div className={`card offer ${product.title.toLowerCase()}`} key={product.title}>
-            <b>{product.title}</b>
-            <p>{product.body}</p>
+            <span className="mark" aria-hidden="true">{product.title.slice(0, 1)}</span>
+            <div>
+              <b>{product.title}</b>
+              <p>{product.body}</p>
+            </div>
           </div>
         ))}
       </div>
