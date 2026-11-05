@@ -111,21 +111,21 @@ export default function Home() {
       <h2>What our agents do</h2>
       <div className="jobs">
         <div className="card job shop">
-          <span className="mark" aria-hidden="true">S</span>
+          <span className="mark" aria-hidden="true">01</span>
           <div>
             <b>Shop Agent</b>
             <p>Answers price, size and stock questions. Shares new arrivals.</p>
           </div>
         </div>
         <div className="card job pay">
-          <span className="mark" aria-hidden="true">P</span>
+          <span className="mark" aria-hidden="true">02</span>
           <div>
             <b>Payment Agent</b>
             <p>Sends payment links and gentle reminders.</p>
           </div>
         </div>
         <div className="card job follow">
-          <span className="mark" aria-hidden="true">F</span>
+          <span className="mark" aria-hidden="true">03</span>
           <div>
             <b>Follow-up Agent</b>
             <p>Sends &quot;ready for pickup&quot; and alteration reminders.</p>
@@ -138,15 +138,12 @@ export default function Home() {
       </div>
 
       <h2>Agents, bots, shops, and sites</h2>
-      <p>Give us the job. An agent, a bot, a shop, or a site does it.</p>
+      <p className="offer-lead">Give us the job. An agent, a bot, a shop, or a site does it.</p>
       <div className="offers">
         {PRODUCTS.map((product) => (
           <div className={`card offer ${product.title.toLowerCase()}`} key={product.title}>
-            <span className="mark" aria-hidden="true">{product.title.slice(0, 1)}</span>
-            <div>
-              <b>{product.title}</b>
-              <p>{product.body}</p>
-            </div>
+            <b>{product.title}</b>
+            <p>{product.body}</p>
           </div>
         ))}
       </div>

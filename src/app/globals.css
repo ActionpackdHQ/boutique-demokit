@@ -303,84 +303,130 @@
 .kit .card p:last-child {
   margin-bottom: 0;
 }
-.kit .jobs,
-.kit .offers {
+.kit .jobs {
   display: grid;
   gap: 10px;
 }
-.kit .card.job,
-.kit .card.offer {
+.kit .card.job {
   display: flex;
   gap: 12px;
   align-items: flex-start;
   margin: 0;
   padding: 14px;
-  background: #fff;
   border-radius: 18px;
-  box-shadow: 0 8px 22px rgba(42, 26, 31, 0.07);
+  border: 0;
+  box-shadow: 0 10px 24px rgba(42, 26, 31, 0.08);
 }
 .kit .mark {
   flex: none;
-  width: 42px;
-  height: 42px;
-  border-radius: 14px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
   display: grid;
   place-items: center;
   color: #fff;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 14px;
+  letter-spacing: 0.02em;
 }
-.kit .card.job b,
-.kit .card.offer b {
+.kit .card.job b {
   display: block;
-  padding: 0;
-  color: #2a1a1f;
+  padding: 2px 0 0;
   background: none;
+  font-size: 17px;
 }
-.kit .card.job p,
-.kit .card.offer p {
-  margin: 4px 0 0;
+.kit .card.job p {
+  margin: 3px 0 0;
   padding: 0;
-  color: #5c5168;
+  color: #4e4452;
+  font-size: 15px;
 }
-.kit .job.shop,
-.kit .offer.agents {
-  background: #fbf3f6;
+.kit .job.shop {
+  background: linear-gradient(180deg, #fff 0%, #f8eef2 100%);
+  box-shadow: inset 4px 0 0 #7a1f3d, 0 10px 24px rgba(42, 26, 31, 0.08);
 }
 .kit .job.shop .mark,
-.kit .offer.agents .mark {
+.kit .job.shop b {
   background: #7a1f3d;
+  color: #fff;
 }
-.kit .job.pay,
-.kit .offer.bots {
-  background: #eef8f2;
+.kit .job.shop b {
+  background: none;
+  color: #7a1f3d;
 }
-.kit .job.pay .mark,
-.kit .offer.bots .mark {
-  background: #128a45;
+.kit .job.pay {
+  background: linear-gradient(180deg, #fff 0%, #e7f7ee 100%);
+  box-shadow: inset 4px 0 0 #1ea85a, 0 10px 24px rgba(42, 26, 31, 0.08);
 }
-.kit .job.follow,
-.kit .offer.shops {
-  background: #f7f1e8;
+.kit .job.pay .mark {
+  background: #1ea85a;
 }
-.kit .job.follow .mark,
-.kit .offer.shops .mark {
+.kit .job.pay b {
+  background: none;
+  color: #128a45;
+}
+.kit .job.follow {
+  background: linear-gradient(180deg, #fff 0%, #f6efe6 100%);
+  box-shadow: inset 4px 0 0 #8a5a2b, 0 10px 24px rgba(42, 26, 31, 0.08);
+}
+.kit .job.follow .mark {
   background: #8a5a2b;
 }
-.kit .offer.sites {
-  background: #f4f1f6;
-}
-.kit .offer.sites .mark {
-  background: #2a1a1f;
+.kit .job.follow b {
+  background: none;
+  color: #8a5a2b;
 }
 .kit .card.control {
-  background: #fff;
-  color: #2a1a1f;
-  border: 2px dashed #7a1f3d;
-  box-shadow: none;
+  background: #7a1f3d;
+  color: #fff;
+  border: 0;
+  border-radius: 18px;
+  box-shadow: 0 10px 24px rgba(122, 31, 61, 0.22);
 }
 .kit .card.control b {
-  color: #7a1f3d;
+  color: #fff;
+}
+.kit .offer-lead {
+  margin-top: 0;
+}
+.kit .offers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.kit .card.offer {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(42, 26, 31, 0.08);
+}
+.kit .card.offer b {
+  display: block;
+  margin: 0;
+  padding: 12px 12px 10px;
+  color: #fff;
+  font-size: 16px;
+}
+.kit .card.offer p {
+  margin: 0;
+  padding: 12px;
+  color: #4e4452;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.kit .offer.agents b {
+  background: #7a1f3d;
+}
+.kit .offer.bots b {
+  background: #1ea85a;
+}
+.kit .offer.shops b {
+  background: #8a5a2b;
+}
+.kit .offer.sites b {
+  background: #2a1a1f;
 }
 .kit video.vid {
   width: 100%;
