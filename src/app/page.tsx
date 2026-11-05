@@ -1,4 +1,5 @@
 import { CtaLink } from "@/components/cta-link";
+import { DemoVideo } from "@/components/demo-video";
 import {
   AAVARNA_DEMO,
   TRY_IT_YOURSELF,
@@ -113,11 +114,7 @@ export default function Home() {
       </div>
 
       <h2>Watch in 60 seconds</h2>
-      <div className="vid" id="video">
-        ▶ 60-second demo video
-        <br />
-        coming soon
-      </div>
+      <DemoVideo />
 
       <h2>What our agents do</h2>
       <div className="card">

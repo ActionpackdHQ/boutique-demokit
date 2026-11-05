@@ -45,4 +45,4 @@ npm run sheet
 ## Placeholders
 
 - **Giri Dharshini’s direct number** is the literal token `[GIRI_PHONE_NUMBER]` on the page and in the PDF. Replace that token when the number is confirmed. Do not invent one.
-- **60-second demo video** is marked coming soon. There is no video file.
+- The 60-second demo plays from `public/actionpackd-demo-video.mp4`. It stays muted until someone presses play.

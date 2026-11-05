@@ -303,17 +303,14 @@
 .kit .card p:last-child {
   margin-bottom: 0;
 }
-.kit .vid {
-  background: #2a1a1f;
-  color: #fff;
+.kit video.vid {
+  width: 100%;
+  height: auto;
+  max-height: 70vh;
   border-radius: 14px;
-  aspect-ratio: 9 / 16;
-  max-height: 420px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
+  background: #2a1a1f;
+  display: block;
+  object-fit: contain;
 }
 .kit footer {
   text-align: center;
