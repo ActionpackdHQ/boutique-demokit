@@ -1,136 +1,155 @@
 #!/usr/bin/env python3
-"""Build the one-page Actionpackd demo-kit sheet.
+"""Build the one-page boutique agent sheet.
 
-Giri Dharshini's direct number is the literal placeholder [GIRI_PHONE_NUMBER].
-Do not replace it with a guessed number.
+Layout matches the Actionpackd demo-kit sheet: three sample photos,
+a two-column problem/agent table, and a green WhatsApp bar.
 """
 
 from pathlib import Path
 
 from fpdf import FPDF
+from PIL import Image, ImageDraw
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "public" / "actionpackd-demo-kit.pdf"
+KIT = ROOT / "public" / "kit"
 FONT = Path("/usr/share/fonts/truetype/liberation")
-GIRI_PHONE_PLACEHOLDER = "[GIRI_PHONE_NUMBER]"
 
-VIOLET = (91, 45, 255)
-INK = (28, 18, 36)
-MUTED = (72, 64, 82)
-PAPER = (246, 241, 234)
-GOLD = (245, 196, 0)
+MAROON = (122, 31, 61)
+INK = (42, 26, 31)
+GREEN = (37, 211, 102)
+LINE = (221, 221, 221)
+GRAY = (119, 119, 119)
+WHITE = (255, 255, 255)
+
+ROWS = [
+    (
+        'Too many "price?" and "available?" messages',
+        "Replies at once, day and night",
+    ),
+    (
+        "New collection, no time to send to everyone",
+        "Shares photos with all your customers",
+    ),
+    (
+        "Chasing payments",
+        "Sends payment links and gentle reminders",
+    ),
+    (
+        "Customers forget to come back",
+        "Follows up on enquiries that did not buy",
+    ),
+    (
+        "Alteration and pickup calls",
+        'Sends "ready for pickup" reminders',
+    ),
+]
 
 
-class Sheet(FPDF):
-    def footer(self):
-        self.set_y(-12)
-        self.set_font("Lib", "", 8)
-        self.set_text_color(*MUTED)
-        self.cell(0, 5, "Actionpackd, Chennai  ·  Demo kit  ·  Samples, not a live shop", align="C")
+def rounded_photo(src: Path, dest: Path, size: int = 560, radius: int = 28) -> None:
+    image = Image.open(src).convert("RGBA").resize((size, size), Image.Resampling.LANCZOS)
+    mask = Image.new("L", (size, size), 0)
+    ImageDraw.Draw(mask).rounded_rectangle((0, 0, size - 1, size - 1), radius=radius, fill=255)
+    image.putalpha(mask)
+    background = Image.new("RGB", (size, size), WHITE)
+    background.paste(image, mask=image.getchannel("A"))
+    background.save(dest, "JPEG", quality=82, optimize=True)
 
 
-def section(pdf: Sheet, title: str):
-    pdf.ln(3.2)
-    pdf.set_font("Lib", "B", 12)
-    pdf.set_text_color(*VIOLET)
-    pdf.multi_cell(0, 6, title)
-    pdf.ln(0.6)
-    pdf.set_text_color(*INK)
+def main() -> None:
+    tmp = Path("/tmp/demo-sheet-photos")
+    tmp.mkdir(exist_ok=True)
+    photos = []
+    for name in ("saree", "blouse", "kurti"):
+        dest = tmp / f"{name}.jpg"
+        rounded_photo(KIT / f"{name}.webp", dest)
+        photos.append(dest)
 
-
-def body(pdf: Sheet, text: str, size: float = 10, height: float = 4.6):
-    pdf.set_font("Lib", "", size)
-    pdf.set_text_color(*INK)
-    pdf.multi_cell(0, height, text)
-
-
-def main():
-    pdf = Sheet(format="A4")
+    pdf = FPDF(format="A4", unit="pt")
     pdf.set_auto_page_break(auto=False)
-    pdf.set_title("Actionpackd demo kit")
+    pdf.set_title("What our agents do for your boutique")
     pdf.set_author("Actionpackd")
-    pdf.set_subject("Agents, bots, shops, and sites")
     pdf.add_font("Lib", "", str(FONT / "LiberationSans-Regular.ttf"))
     pdf.add_font("Lib", "B", str(FONT / "LiberationSans-Bold.ttf"))
     pdf.add_page()
-    pdf.set_fill_color(*PAPER)
-    pdf.rect(0, 0, 210, 297, "F")
-    pdf.set_fill_color(*VIOLET)
-    pdf.rect(0, 0, 210, 14, "F")
-    pdf.set_xy(14, 4)
-    pdf.set_font("Lib", "B", 11)
-    pdf.set_text_color(255, 255, 255)
-    pdf.cell(0, 6, "Actionpackd   ·   Demo kit   ·   Chennai")
+    pdf.set_fill_color(*WHITE)
+    pdf.rect(0, 0, 595, 842, "F")
 
-    pdf.set_xy(14, 20)
+    pdf.set_xy(45.8, 46)
+    pdf.set_font("Lib", "B", 19.5)
+    pdf.set_text_color(*MAROON)
+    pdf.cell(500, 24, "What our agents do for your boutique")
+
+    pdf.set_xy(45.8, 80)
+    pdf.set_font("Lib", "", 12)
     pdf.set_text_color(*INK)
-    pdf.set_font("Lib", "B", 18)
-    pdf.multi_cell(182, 8, "Your boutique, answering customers 24 hours.")
-    pdf.set_x(14)
-    body(
-        pdf,
-        '"Price?" "Size?" "Is this available?" Agents reply for you. They share new arrivals, send payment links, and remind customers about pickup.',
-        10.5,
-        5,
+    pdf.cell(
+        500,
+        16,
+        "Actionpackd, Chennai. Agents that reply to your customers on WhatsApp, 24 hours.",
     )
 
-    section(pdf, "What Actionpackd provides")
-    items = [
-        "Agents - A worker that qualifies leads, chases payments, books visits, and hands the hot ones to your team.",
-        "Bots - A tighter assistant for repeat questions: price, timings, stock, and simple capture.",
-        "Shops - A shopfront plus the agent behind it. Catalog, payment links, and pickup reminders, using your photos.",
-        "Sites - A public site that explains the offer and sends the visitor to the agent, the shop, or a person.",
-    ]
-    for item in items:
-        pdf.set_x(14)
-        body(pdf, item, 10, 4.5)
-        pdf.ln(0.8)
+    image_y = 106.5
+    image_size = 156
+    for index, photo in enumerate(photos):
+        pdf.image(photo, x=45.75 + index * 166.5, y=image_y, w=image_size, h=image_size)
 
-    section(pdf, "Boutique agents on this demo")
-    pdf.set_x(14)
-    body(
-        pdf,
-        "Shop Agent answers price, size, and stock, and shares new arrivals. Payment Agent sends links and gentle reminders. Follow-up Agent sends pickup and alteration reminders. You see every chat and can step in. Demo Boutique is a sample, not a real shop. Garment photos on the site are labeled samples.",
-        10,
-        4.5,
+    header_y = 271.5
+    header_h = 25.5
+    pdf.set_fill_color(*MAROON)
+    pdf.rect(45.8, header_y, 261, header_h, "F")
+    pdf.rect(306.8, header_y, 243, header_h, "F")
+    pdf.set_font("Lib", "B", 12)
+    pdf.set_text_color(*WHITE)
+    pdf.set_xy(51.8, 276.2)
+    pdf.cell(240, 16, "Your problem")
+    pdf.set_xy(312.4, 276.2)
+    pdf.cell(220, 16, "What the agent does")
+
+    row_top = 297.0
+    row_h = 24.75
+    pdf.set_font("Lib", "", 10.5)
+    pdf.set_text_color(*INK)
+    for index, (problem, action) in enumerate(ROWS):
+        y = row_top + index * row_h
+        pdf.set_xy(51.8, y + 6.2)
+        pdf.cell(248, 13, problem)
+        pdf.set_xy(312.4, y + 6.2)
+        pdf.cell(230, 13, action)
+        line_y = y + row_h
+        pdf.set_fill_color(*LINE)
+        pdf.rect(45.8, line_y - 0.8, 261, 0.8, "F")
+        pdf.rect(306.8, line_y - 0.8, 243, 0.8, "F")
+
+    pdf.set_xy(45.8, 432)
+    pdf.set_font("Lib", "B", 12)
+    pdf.set_text_color(*INK)
+    pdf.cell(500, 15, "You stay in control. You see every chat. You can step in any time.")
+    pdf.set_xy(45.8, 447.4)
+    pdf.cell(500, 15, "Setup is simple. We set it up with your photos.")
+
+    bar_y = 471.8
+    bar_h = 49.5
+    pdf.set_fill_color(*GREEN)
+    pdf.rect(45.8, bar_y, 504, bar_h, "F", round_corners=True, corner_radius=10)
+    pdf.set_font("Lib", "B", 13.5)
+    pdf.set_text_color(*WHITE)
+    pdf.set_xy(45.8, bar_y + 8)
+    pdf.cell(504, 16, "Try it yourself. Message us on WhatsApp to get it: +91 81900 07072", align="C")
+    pdf.set_xy(45.8, bar_y + 26)
+    pdf.cell(504, 16, "(wa.me/918190007072)", align="C")
+    pdf.link(
+        45.8,
+        bar_y,
+        504,
+        bar_h,
+        "https://api.whatsapp.com/send/?phone=918190007072&text=Hi%2C+I+want+to+try+the+boutique+agent+demo&type=phone_number&app_absent=0",
     )
 
-    section(pdf, "Try the boutique")
-    pdf.set_x(14)
-    body(
-        pdf,
-        "Aavarna boutique demo: https://aavarna-boutique.vercel.app/",
-        10,
-        4.6,
-    )
-
-    section(pdf, "Talk to Actionpackd")
-    lines = [
-        "Website: https://actionpackd.com",
-        "Hello agent: https://hello.actionpackd.com",
-        "Actionpackd WhatsApp: +91 81900 07072",
-        "https://wa.me/918190007072",
-        "Ram Sir, Founder and CEO - message the Actionpackd WhatsApp above.",
-        f"Giri Dharshini, Chief Operating Officer - direct number: {GIRI_PHONE_PLACEHOLDER}",
-        "That token is a placeholder. It is not a working phone number.",
-    ]
-    for line in lines:
-        pdf.set_x(14)
-        body(pdf, line, 10, 4.5)
-
-    y = pdf.get_y() + 6
-    pdf.set_fill_color(*GOLD)
-    pdf.rect(14, y, 18, 1.4, "F")
-    pdf.set_xy(14, y + 3)
-    pdf.set_font("Lib", "", 8.5)
-    pdf.set_text_color(*MUTED)
-    pdf.multi_cell(
-        182,
-        4,
-        "Talk to Ram on the Actionpackd WhatsApp or open the Hello agent. No video in this kit yet. The 60-second demo is marked coming soon on the site.",
-    )
-    if pdf.get_y() > 284:
-        raise SystemExit(f"Footer collision at y={pdf.get_y():.1f}")
+    pdf.set_xy(45.8, 528)
+    pdf.set_font("Lib", "", 8.2)
+    pdf.set_text_color(*GRAY)
+    pdf.cell(500, 12, 'Photos are samples from "Demo Boutique", a demo shop.')
 
     if pdf.page_no() != 1:
         raise SystemExit(f"Expected 1 page, got {pdf.page_no()}")
