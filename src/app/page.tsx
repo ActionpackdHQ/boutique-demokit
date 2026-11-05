@@ -141,7 +141,7 @@ export default function Home() {
       </div>
 
       <h2>Agents, bots, shops, and sites</h2>
-      <p>Actionpackd provides these four. This page is the boutique shop.</p>
+      <p>Give us the job. An agent, a bot, a shop, or a site does it.</p>
       {PRODUCTS.map((product) => (
         <div className="card" key={product.title}>
           <b>{product.title}</b>
