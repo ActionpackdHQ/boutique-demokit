@@ -2,24 +2,16 @@ import { CtaLink } from "@/components/cta-link";
 import { DemoVideo } from "@/components/demo-video";
 import {
   AAVARNA_DEMO,
-  TRY_IT_YOURSELF,
-  ACTIONPACKD_SITE,
-  ACTIONPACKD_WHATSAPP_DISPLAY,
-  ACTIONPACKD_WHATSAPP_E164,
-  GIRI_PHONE_PLACEHOLDER,
+  CONTACT_NUMBERS,
   HELLO_AGENT,
-  MSG_GIRI,
-  MSG_RAM,
   MSG_SHOP,
   PDF_HREF,
   PRODUCTS,
+  TRY_IT_YOURSELF,
   whatsAppHref,
 } from "@/lib/site";
 
 const shopHref = whatsAppHref(MSG_SHOP);
-const ramHref = whatsAppHref(MSG_RAM);
-const giriHref = whatsAppHref(MSG_GIRI);
-const callHref = `tel:+${ACTIONPACKD_WHATSAPP_E164}`;
 
 export default function Home() {
   return (
@@ -164,51 +156,16 @@ export default function Home() {
         Message us on WhatsApp to get it
       </CtaLink>
 
-      <h2 id="contact">Talk to a person</h2>
-      <div className="card">
-        <b>Ram Sir</b>
-        <br />
-        Founder & CEO, Actionpackd
-        <br />
-        <br />
-        {ACTIONPACKD_WHATSAPP_DISPLAY}
-        <br />
-        <a href={ramHref}>https://wa.me/{ACTIONPACKD_WHATSAPP_E164}</a>
+      <h2 id="contact">Contact</h2>
+      <div className="card contact-card">
+        {CONTACT_NUMBERS.map((number) => (
+          <a key={number.tel} className="contact-line" href={`tel:${number.tel}`}>
+            <span>Call</span>
+            {number.display}
+          </a>
+        ))}
       </div>
-      <CtaLink href={ramHref} variant="secondary">
-        Message Ram Sir on WhatsApp
-      </CtaLink>
-      <CtaLink href={callHref} variant="outline" external={false}>
-        Call {ACTIONPACKD_WHATSAPP_DISPLAY}
-      </CtaLink>
-
-      <div className="card">
-        <b>Giri Dharshini</b>
-        <br />
-        Chief Operating Officer, Actionpackd
-        <br />
-        <br />
-        Placeholder · not a working number
-        <br />
-        <b>{GIRI_PHONE_PLACEHOLDER}</b>
-      </div>
-      <CtaLink href={giriHref} variant="outline">
-        Ask for Giri on the Actionpackd WhatsApp
-      </CtaLink>
-
-      <div className="card">
-        <b>Actionpackd</b>
-        <br />
-        <a href={ACTIONPACKD_SITE}>actionpackd.com</a>
-        <br />
-        <a href={HELLO_AGENT}>Hello agent · hello.actionpackd.com</a>
-        <br />
-        WhatsApp {ACTIONPACKD_WHATSAPP_DISPLAY}
-      </div>
-      <CtaLink href={HELLO_AGENT}>Open the Hello agent</CtaLink>
-      <CtaLink href={ACTIONPACKD_SITE} variant="outline">
-        Visit actionpackd.com
-      </CtaLink>
+      <CtaLink href={HELLO_AGENT}>hello.actionpackd.com</CtaLink>
 
       <footer>Actionpackd, Chennai · &quot;Demo Boutique&quot; is a sample shop for this demo.</footer>
     </div>

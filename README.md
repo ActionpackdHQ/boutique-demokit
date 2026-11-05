@@ -2,7 +2,7 @@
 
 Mobile-first sales page for Actionpackd. It shows **Agents, Bots, Shops, and Sites**, and links the [Aavarna boutique demo](https://aavarna-boutique.vercel.app/).
 
-No account, database, or API key. Visitors reach the team through [Hello](https://hello.actionpackd.com) or WhatsApp `+91 81900 07072`.
+No account, database, or API key. Visitors reach the team at +91 733 964 0064, 87543 66890, or [hello.actionpackd.com](https://hello.actionpackd.com).
 
 ## Run locally
 
@@ -44,5 +44,4 @@ npm run sheet
 
 ## Placeholders
 
-- **Giri Dharshini’s direct number** is the literal token `[GIRI_PHONE_NUMBER]` on the page and in the PDF. Replace that token when the number is confirmed. Do not invent one.
 - The 60-second demo plays from `public/actionpackd-demo-video.mp4`. It stays muted until someone presses play.
