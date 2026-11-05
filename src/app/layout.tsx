@@ -5,7 +5,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Actionpackd Boutique Agents – Demo Kit",
   description:
-    "See how Actionpackd agents answer boutique customers. Try the Aavarna demo, qualify a lead, and talk to the team.",
+    "See how Actionpackd agents answer boutique customers. Try the Aavarna demo and talk to the team.",
 };
 
 export default function RootLayout({

@@ -104,15 +104,6 @@ def main():
         4.6,
     )
 
-    section(pdf, "How a visitor is qualified")
-    pdf.set_x(14)
-    body(
-        pdf,
-        "Boutiques: exactly two questions, then Hello or WhatsApp. A shop that is a boutique also stops at two. Other shops ask four. Agents ask three. Sites ask three. Bots ask four. Nothing is stored on a server. The visitor sends the summary.",
-        10,
-        4.5,
-    )
-
     section(pdf, "Talk to Actionpackd")
     lines = [
         "Website: https://actionpackd.com",
@@ -136,7 +127,7 @@ def main():
     pdf.multi_cell(
         182,
         4,
-        "Leads from the interactive demo are handed to Ram on WhatsApp or to the Hello agent. No video in this kit yet. The 60-second demo is marked coming soon on the site.",
+        "Talk to Ram on the Actionpackd WhatsApp or open the Hello agent. No video in this kit yet. The 60-second demo is marked coming soon on the site.",
     )
     if pdf.get_y() > 284:
         raise SystemExit(f"Footer collision at y={pdf.get_y():.1f}")

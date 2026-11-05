@@ -1,6 +1,5 @@
 import { BoutiqueFrame } from "@/components/boutique-frame";
 import { CtaLink } from "@/components/cta-link";
-import { QualifyDemo } from "@/components/qualify-demo";
 import {
   AAVARNA_DEMO,
   ACTIONPACKD_SITE,
@@ -150,8 +149,6 @@ export default function Home() {
           {product.body}
         </div>
       ))}
-
-      <QualifyDemo />
 
       <h2 id="try">Try the Aavarna boutique</h2>
       <p>

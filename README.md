@@ -1,8 +1,8 @@
 # Actionpackd demo kit
 
-Mobile-first sales page for Actionpackd. It shows **Agents, Bots, Shops, and Sites**, walks a visitor through a short lead qualification, and links the [Aavarna boutique demo](https://aavarna-boutique.vercel.app/).
+Mobile-first sales page for Actionpackd. It shows **Agents, Bots, Shops, and Sites**, and links the [Aavarna boutique demo](https://aavarna-boutique.vercel.app/).
 
-No account, database, or API key. Qualified leads leave through [Hello](https://hello.actionpackd.com) or WhatsApp `+91 81900 07072`.
+No account, database, or API key. Visitors reach the team through [Hello](https://hello.actionpackd.com) or WhatsApp `+91 81900 07072`.
 
 ## Run locally
 
