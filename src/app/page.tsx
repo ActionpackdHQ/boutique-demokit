@@ -109,35 +109,39 @@ export default function Home() {
       <DemoVideo />
 
       <h2>What our agents do</h2>
-      <div className="card">
-        <b>Shop Agent</b>
-        <br />
-        Answers price, size and stock questions. Shares new arrivals.
+      <div className="jobs">
+        <div className="card job">
+          <b>Shop Agent</b>
+          <br />
+          Answers price, size and stock questions. Shares new arrivals.
+        </div>
+        <div className="card job">
+          <b>Payment Agent</b>
+          <br />
+          Sends payment links and gentle reminders.
+        </div>
+        <div className="card job">
+          <b>Follow-up Agent</b>
+          <br />
+          Sends &quot;ready for pickup&quot; and alteration reminders.
+        </div>
       </div>
-      <div className="card">
-        <b>Payment Agent</b>
-        <br />
-        Sends payment links and gentle reminders.
-      </div>
-      <div className="card">
-        <b>Follow-up Agent</b>
-        <br />
-        Sends &quot;ready for pickup&quot; and alteration reminders.
-      </div>
-      <div className="card">
+      <div className="card control">
         <b>You stay in control.</b> You see every chat. You can step in any time. We set it up with
         your photos.
       </div>
 
       <h2>Agents, bots, shops, and sites</h2>
       <p>Give us the job. An agent, a bot, a shop, or a site does it.</p>
-      {PRODUCTS.map((product) => (
-        <div className="card" key={product.title}>
-          <b>{product.title}</b>
-          <br />
-          {product.body}
-        </div>
-      ))}
+      <div className="offers">
+        {PRODUCTS.map((product) => (
+          <div className="card offer" key={product.title}>
+            <b>{product.title}</b>
+            <br />
+            {product.body}
+          </div>
+        ))}
+      </div>
 
       <h2 id="try">Try the Aavarna boutique</h2>
       <p>
