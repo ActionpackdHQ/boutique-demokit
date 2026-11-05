@@ -24,7 +24,9 @@ export default function Home() {
           WhatsApp for you. They share new arrivals, send payment links and remind customers about
           pickup.
         </p>
-        <CtaLink href={AAVARNA_DEMO}>Open the Aavarna demo</CtaLink>
+        <CtaLink href={AAVARNA_DEMO} variant="secondary">
+          See the live demo
+        </CtaLink>
         <CtaLink href={TRY_IT_YOURSELF}>Try it yourself</CtaLink>
         <img
           src="/kit/hero-phone.webp"
