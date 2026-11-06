@@ -105,6 +105,17 @@ export default function Home() {
         />
       </div>
 
+      <h2>Agents, bots, shops, and sites</h2>
+      <p className="offer-lead">Give us the job. An agent, a bot, a shop, or a site does it.</p>
+      <div className="offers">
+        {PRODUCTS.map((product) => (
+          <div className={`card offer ${product.title.toLowerCase()}`} key={product.title}>
+            <b>{product.title}</b>
+            <p>{product.body}</p>
+          </div>
+        ))}
+      </div>
+
       <h2>Watch in 60 seconds</h2>
       <DemoVideo />
 
@@ -135,17 +146,6 @@ export default function Home() {
       <div className="card control">
         <b>You stay in control.</b> You see every chat. You can step in any time. We set it up with
         your photos.
-      </div>
-
-      <h2>Agents, bots, shops, and sites</h2>
-      <p className="offer-lead">Give us the job. An agent, a bot, a shop, or a site does it.</p>
-      <div className="offers">
-        {PRODUCTS.map((product) => (
-          <div className={`card offer ${product.title.toLowerCase()}`} key={product.title}>
-            <b>{product.title}</b>
-            <p>{product.body}</p>
-          </div>
-        ))}
       </div>
 
       <h2 id="try">Try the Aavarna boutique</h2>
