@@ -106,44 +106,35 @@ export default function Home() {
       </div>
 
       <h2>Agents, bots, shops, and sites</h2>
-      <p className="offer-lead">Give us the job. An agent, a bot, a shop, or a site does it.</p>
-      <div className="offers">
-        {PRODUCTS.map((product) => (
-          <div className={`card offer ${product.title.toLowerCase()}`} key={product.title}>
-            <b>{product.title}</b>
-            <p>{product.body}</p>
-          </div>
-        ))}
-      </div>
+      <p>Give us the job. An agent, a bot, a shop, or a site does it.</p>
+      {PRODUCTS.map((product) => (
+        <div className="card" key={product.title}>
+          <b>{product.title}</b>
+          <br />
+          {product.body}
+        </div>
+      ))}
 
       <h2>Watch in 60 seconds</h2>
       <DemoVideo />
 
       <h2>What our agents do</h2>
-      <div className="jobs">
-        <div className="card job shop">
-          <span className="mark" aria-hidden="true">01</span>
-          <div>
-            <b>Shop Agent</b>
-            <p>Answers price, size and stock questions. Shares new arrivals.</p>
-          </div>
-        </div>
-        <div className="card job pay">
-          <span className="mark" aria-hidden="true">02</span>
-          <div>
-            <b>Payment Agent</b>
-            <p>Sends payment links and gentle reminders.</p>
-          </div>
-        </div>
-        <div className="card job follow">
-          <span className="mark" aria-hidden="true">03</span>
-          <div>
-            <b>Follow-up Agent</b>
-            <p>Sends &quot;ready for pickup&quot; and alteration reminders.</p>
-          </div>
-        </div>
+      <div className="card">
+        <b>Shop Agent</b>
+        <br />
+        Answers price, size and stock questions. Shares new arrivals.
       </div>
-      <div className="card control">
+      <div className="card">
+        <b>Payment Agent</b>
+        <br />
+        Sends payment links and gentle reminders.
+      </div>
+      <div className="card">
+        <b>Follow-up Agent</b>
+        <br />
+        Sends &quot;ready for pickup&quot; and alteration reminders.
+      </div>
+      <div className="card">
         <b>You stay in control.</b> You see every chat. You can step in any time. We set it up with
         your photos.
       </div>
