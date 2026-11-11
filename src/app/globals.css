@@ -377,19 +377,18 @@
   color: #7a1f3d;
 }
 .kit .contact-card {
-  padding: 14px 16px 12px;
-}
-.kit .contact-kicker {
-  margin: 0 0 4px;
-  font-size: 17px;
-  font-weight: 700;
-  color: #2a1a1f;
+  padding: 4px 16px;
 }
 .kit .contact-line {
   margin: 0;
-  font-size: 18px;
+  padding: 14px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 17px;
   font-weight: 700;
-  line-height: 1.45;
+  line-height: 1.4;
+}
+.kit .contact-line:last-child {
+  border-bottom: 0;
 }
 .kit .contact-line a {
   text-decoration: none;

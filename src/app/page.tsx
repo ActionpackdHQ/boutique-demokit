@@ -2,7 +2,8 @@ import { CtaLink } from "@/components/cta-link";
 import { DemoVideo } from "@/components/demo-video";
 import {
   AAVARNA_DEMO,
-  CONTACT_NUMBERS,
+  ACTIONPACKD_SITE,
+  ACTIONPACKD_WHATSAPP_E164,
   HELLO_AGENT,
   MSG_SHOP,
   PDF_HREF,
@@ -155,17 +156,18 @@ export default function Home() {
 
       <h2 id="contact">Contact</h2>
       <div className="card contact-card">
-        <p className="contact-kicker">Call</p>
         <p className="contact-line">
-          {CONTACT_NUMBERS.map((number, index) => (
-            <span key={number.tel}>
-              {index > 0 ? " / " : null}
-              <a href={`tel:${number.tel}`}>{number.display}</a>
-            </span>
-          ))}
+          <a href={`https://wa.me/${ACTIONPACKD_WHATSAPP_E164}`}>
+            Chat with the AI agent on WhatsApp
+          </a>
+        </p>
+        <p className="contact-line">
+          <a href={ACTIONPACKD_SITE}>actionpackd.com</a>
+        </p>
+        <p className="contact-line">
+          <a href={HELLO_AGENT}>hello.actionpackd.com</a>
         </p>
       </div>
-      <CtaLink href={HELLO_AGENT}>hello.actionpackd.com</CtaLink>
 
       <footer>Actionpackd, Chennai · &quot;Demo Boutique&quot; is a sample shop for this demo.</footer>
     </div>
