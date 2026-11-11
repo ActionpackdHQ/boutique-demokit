@@ -1,3 +1,5 @@
+import { IndianRupee, Package, ShieldCheck, ShoppingBag } from "lucide-react";
+
 import { CtaLink } from "@/components/cta-link";
 import { DemoVideo } from "@/components/demo-video";
 import {
@@ -119,25 +121,44 @@ export default function Home() {
       <h2>Watch in 30 seconds</h2>
       <DemoVideo />
 
-      <h2>What our agents do</h2>
-      <div className="card">
-        <b>Shop Agent</b>
-        <br />
-        Answers price, size and stock questions. Shares new arrivals.
-      </div>
-      <div className="card">
-        <b>Payment Agent</b>
-        <br />
-        Sends payment links and gentle reminders.
-      </div>
-      <div className="card">
-        <b>Follow-up Agent</b>
-        <br />
-        Sends &quot;ready for pickup&quot; and alteration reminders.
-      </div>
-      <div className="card">
-        <b>You stay in control.</b> You see every chat. You can step in any time. We set it up with
-        your photos.
+      <h2 id="team">Meet your night-shift team</h2>
+      <div className="team">
+        <div className="card team-card">
+          <span className="team-icon" aria-hidden="true">
+            <ShoppingBag />
+          </span>
+          <div>
+            <b>The Shop Keeper</b>
+            <p>Knows every saree, size and price by heart. Shows new arrivals before she even asks.</p>
+          </div>
+        </div>
+        <div className="card team-card">
+          <span className="team-icon" aria-hidden="true">
+            <IndianRupee />
+          </span>
+          <div>
+            <b>The Cashier</b>
+            <p>Sends the pay link the moment she says yes. Nudges her gently, never pushily.</p>
+          </div>
+        </div>
+        <div className="card team-card">
+          <span className="team-icon" aria-hidden="true">
+            <Package />
+          </span>
+          <div>
+            <b>The Pickup Buddy</b>
+            <p>&quot;Your blouse is ready ✨&quot; goes out on time, every time. Alterations and pickups, never forgotten.</p>
+          </div>
+        </div>
+        <div className="card team-card">
+          <span className="team-icon" aria-hidden="true">
+            <ShieldCheck />
+          </span>
+          <div>
+            <b>You&apos;re still the owner</b>
+            <p>Every chat in front of you. Jump in whenever you want. Set up with your own photos in a day.</p>
+          </div>
+        </div>
       </div>
 
       <h2 id="try">Try the Aavarna boutique</h2>
