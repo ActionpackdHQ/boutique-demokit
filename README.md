@@ -2,7 +2,7 @@
 
 Mobile-first sales page for Actionpackd. It shows **Agents, Bots, Shops, and Sites**, and links the [Aavarna boutique demo](https://aavarna-boutique.vercel.app/).
 
-No account, database, or API key. Visitors reach the team on WhatsApp at +91 81900 07072, [actionpackd.com](https://actionpackd.com), or [hello.actionpackd.com](https://hello.actionpackd.com).
+No account, database, or API key. Visitors reach the agent on WhatsApp at +91 81900 07072 or at [hello.actionpackd.com](https://hello.actionpackd.com).
 
 ## Run locally
 
