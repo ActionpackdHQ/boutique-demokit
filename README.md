@@ -44,4 +44,4 @@ npm run sheet
 
 ## Placeholders
 
-- The 60-second demo plays from `public/actionpackd-demo-video.mp4`. It stays muted until someone presses play.
+- The 30-second demo plays from `public/actionpackd-demo-video.mp4`. It starts muted when the section is on screen.

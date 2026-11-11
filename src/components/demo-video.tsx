@@ -38,7 +38,7 @@ export function DemoVideo() {
       poster="/kit/demo-poster.webp"
       width={1080}
       height={1920}
-      aria-label="60-second Actionpackd boutique demo"
+      aria-label="30-second Actionpackd boutique demo"
     >
       <source src="/actionpackd-demo-video.mp4" type="video/mp4" />
     </video>

@@ -115,7 +115,7 @@ export default function Home() {
         </div>
       ))}
 
-      <h2>Watch in 60 seconds</h2>
+      <h2>Watch in 30 seconds</h2>
       <DemoVideo />
 
       <h2>What our agents do</h2>
