@@ -121,7 +121,7 @@ export default function Home() {
       <h2>Watch in 30 seconds</h2>
       <DemoVideo />
 
-      <h2 id="team">Meet your night-shift team</h2>
+      <h2 id="team">Your team that never sleeps</h2>
       <div className="team">
         <div className="card team-card">
           <span className="team-icon" aria-hidden="true">
