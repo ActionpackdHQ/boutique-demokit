@@ -4,7 +4,6 @@ import { CtaLink } from "@/components/cta-link";
 import { DemoVideo } from "@/components/demo-video";
 import {
   ACTIONPACKD_WHATSAPP_DISPLAY,
-  CRESTORA_AGENT,
   CRESTORA_DEMO,
   HELLO_AGENT,
   PDF_HREF,
@@ -173,7 +172,7 @@ export default function Home() {
 
       <h2 id="try">Try the live demo</h2>
       <p>
-        Crestora is the sample project site. Open it, then open the AI agent that qualifies buyers
+        Crestora is the sample project site. Open it and chat with the AI agent that qualifies buyers
         and books the visit.
       </p>
       <CtaLink href={CRESTORA_DEMO}>Open the Crestora demo</CtaLink>
@@ -182,9 +181,6 @@ export default function Home() {
       </CtaLink>
       <CtaLink href={TRY_IT_YOURSELF} variant="secondary">
         Message us on WhatsApp to get it
-      </CtaLink>
-      <CtaLink href={CRESTORA_AGENT} variant="outline">
-        Open the AI agent
       </CtaLink>
 
       <h2 id="contact">Contact</h2>

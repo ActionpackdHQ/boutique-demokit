@@ -3,7 +3,6 @@ export const ACTIONPACKD_WHATSAPP_E164 = "918190007072";
 export const ACTIONPACKD_SITE = "https://actionpackd.com";
 export const HELLO_AGENT = "https://hello.actionpackd.com";
 export const CRESTORA_DEMO = "https://static-deploy-sigma-bay.vercel.app/";
-export const CRESTORA_AGENT = "https://static-deploy-sigma-bay.vercel.app/agent";
 
 export const REAL_ESTATE_WHATSAPP_TEXT =
   "Hi, I'd like an AI agent for my real estate business.";
