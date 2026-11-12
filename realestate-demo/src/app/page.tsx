@@ -1,0 +1,185 @@
+import {
+  Bell,
+  CalendarCheck,
+  ClipboardList,
+  Globe,
+  Images,
+} from "lucide-react";
+
+import { CtaLink } from "@/components/cta-link";
+import {
+  ACTIONPACKD_SITE,
+  ACTIONPACKD_WHATSAPP_DISPLAY,
+  CRESTORA_AGENT,
+  CRESTORA_DEMO,
+  HELLO_AGENT,
+  PRODUCTS,
+  REAL_ESTATE_WHATSAPP_TEXT,
+  TRY_IT_YOURSELF,
+  whatsAppHref,
+} from "@/lib/site";
+
+const agentChatHref = whatsAppHref(REAL_ESTATE_WHATSAPP_TEXT);
+
+export default function Home() {
+  return (
+    <div className="kit">
+      <section className="hero">
+        <span className="tag">Actionpackd · Real estate</span>
+        <h1>Every buyer enquiry, answered in seconds.</h1>
+        <p>
+          An AI agent on WhatsApp qualifies buyers — area, budget, BHK, timeline — shares project
+          photos and brochures, and books site visits, day or night.
+        </p>
+        <CtaLink href={CRESTORA_DEMO} variant="secondary">
+          See the live demo
+        </CtaLink>
+        <CtaLink href={TRY_IT_YOURSELF}>Try it yourself</CtaLink>
+        <img
+          src="/kit/hero-phone.webp"
+          alt="Phone showing a WhatsApp chat about a property enquiry"
+          width={720}
+          height={1280}
+        />
+      </section>
+
+      <h2>See it work</h2>
+      <p>
+        This is a sample chat with <b>Demo Project</b> (not a live listing).
+      </p>
+      <div className="chat">
+        <div className="top">
+          Demo Project (sample)
+          <small>AI agent · online</small>
+        </div>
+        <div className="msgs">
+          <div className="day">Today</div>
+          <div className="b c">Hi, I saw the ad. Is anyone there?</div>
+          <div className="b a">
+            Yes. Which area are you looking in, and how many BHK?
+            <div className="t">23:04</div>
+          </div>
+          <div className="b c">
+            3 BHK, close to the office. This month if I can.
+            <div className="t">23:05</div>
+          </div>
+          <div className="b a">
+            I can share the project photos, the floor plan and the location, and book a site visit.
+            Morning or evening?
+            <div className="t">23:05</div>
+          </div>
+          <div className="b c">
+            Sunday evening.
+            <div className="t">23:06</div>
+          </div>
+          <div className="b a">
+            Noted. I will send a reminder before the visit. Someone from your team can join this
+            chat any time.
+            <div className="t">23:06</div>
+          </div>
+        </div>
+      </div>
+      <CtaLink href={TRY_IT_YOURSELF}>Try it yourself</CtaLink>
+
+      <h2>Project photos</h2>
+      <p>Your own photos, floor plans and brochure go here. The AI agent sends them to buyers.</p>
+      <div className="grid">
+        <img
+          src="/kit/hero-phone.webp"
+          alt="Sample of a buyer chat on a phone"
+          width={720}
+          height={1280}
+          loading="lazy"
+        />
+      </div>
+
+      <h2>Agents, bots, shops, and sites</h2>
+      <p>Give us the job. An agent, a bot, a shop, or a site does it.</p>
+      {PRODUCTS.map((product) => (
+        <div className="card" key={product.title}>
+          <b>{product.title}</b>
+          <br />
+          {product.body}
+        </div>
+      ))}
+
+      <h2 id="team">Your team that never sleeps</h2>
+      <div className="team">
+        <div className="card team-card">
+          <span className="team-icon" aria-hidden="true">
+            <ClipboardList />
+          </span>
+          <div>
+            <b>Lead Qualifier</b>
+            <p>Asks area, budget, BHK and timeline while the enquiry is still warm.</p>
+          </div>
+        </div>
+        <div className="card team-card">
+          <span className="team-icon" aria-hidden="true">
+            <CalendarCheck />
+          </span>
+          <div>
+            <b>Site Visit Booker</b>
+            <p>Books the visit and sends a reminder, so Sunday evening does not slip past.</p>
+          </div>
+        </div>
+        <div className="card team-card">
+          <span className="team-icon" aria-hidden="true">
+            <Images />
+          </span>
+          <div>
+            <b>Brochure on demand</b>
+            <p>Sends photos, floor plans and the location the moment they ask.</p>
+          </div>
+        </div>
+        <div className="card team-card">
+          <span className="team-icon" aria-hidden="true">
+            <Bell />
+          </span>
+          <div>
+            <b>Follow-up</b>
+            <p>Re-opens quiet buyers with messages a person has already approved.</p>
+          </div>
+        </div>
+        <div className="card team-card">
+          <span className="team-icon" aria-hidden="true">
+            <Globe />
+          </span>
+          <div>
+            <b>NRI Buyer Desk</b>
+            <p>Answers Gulf and US enquiries after your office has closed.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 id="try">Try the live demo</h2>
+      <p>
+        Crestora is the sample project site. Open it, then open the AI agent that qualifies buyers
+        and books the visit.
+      </p>
+      <CtaLink href={CRESTORA_DEMO}>Open the Crestora demo</CtaLink>
+      <CtaLink href={CRESTORA_AGENT} variant="secondary">
+        Open the AI agent
+      </CtaLink>
+
+      <h2 id="contact">Contact</h2>
+      <div className="card contact-card">
+        <p className="contact-line">
+          <a href={agentChatHref}>
+            Chat with the AI agent on WhatsApp
+            <br />
+            {ACTIONPACKD_WHATSAPP_DISPLAY}
+          </a>
+        </p>
+        <p className="contact-line">
+          <a href={ACTIONPACKD_SITE}>actionpackd.com</a>
+        </p>
+        <p className="contact-line">
+          <a href={HELLO_AGENT}>hello.actionpackd.com</a>
+        </p>
+      </div>
+
+      <footer>Actionpackd · A sample project for this demo. Not a live listing.</footer>
+    </div>
+  );
+}
