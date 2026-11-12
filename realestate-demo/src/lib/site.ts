@@ -24,7 +24,7 @@ export const PRODUCTS = [
     body: "A tighter reply for the questions that repeat: area, budget, BHK and timeline.",
   },
   {
-    title: "Shops",
+    title: "Project pages",
     body: "A project page plus the AI agent behind it. Photos, floor plans and visit bookings.",
   },
   {

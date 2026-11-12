@@ -206,12 +206,18 @@
   color: #7a1f3d;
   background: #fff;
 }
+.kit .hero {
+  overflow: hidden;
+}
 .kit .hero img {
   width: 100%;
   height: auto;
   border-radius: 18px;
   margin-top: 12px;
+  margin-bottom: 4px;
   display: block;
+  position: relative;
+  z-index: 0;
 }
 .kit .chat {
   background: #e5ddd5;
@@ -243,6 +249,9 @@
   font-size: 15px;
   line-height: 1.4;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  overflow-wrap: break-word;
+  position: relative;
+  z-index: 1;
 }
 .kit .c {
   align-self: flex-end;
@@ -290,6 +299,22 @@
   height: auto;
   border-radius: 12px;
   display: block;
+}
+.kit .grid.samples {
+  align-items: start;
+}
+.kit .grid.samples img:not(.phone) {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+.kit .grid.samples img.phone {
+  grid-column: 2;
+  grid-row: 2 / span 2;
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  object-fit: cover;
+  object-position: center top;
 }
 .kit .card {
   background: #fff;

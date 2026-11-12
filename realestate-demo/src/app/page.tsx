@@ -73,20 +73,41 @@ export default function Home() {
             <div className="t">23:06</div>
           </div>
           <div className="b a">
-            Noted. I will send a reminder before the visit. Someone from your team can join this
-            chat any time.
+            Noted. I will send a reminder before the visit. Your team can join this chat.
             <div className="t">23:06</div>
           </div>
         </div>
       </div>
       <CtaLink href={TRY_IT_YOURSELF}>Try it yourself</CtaLink>
 
-      <h2>Project photos</h2>
-      <p>Your own photos, floor plans and brochure go here. The AI agent sends them to buyers.</p>
-      <div className="grid">
+      <h2>Sample project</h2>
+      <p>Your own photos go here. The agent sends them to buyers.</p>
+      <div className="grid samples">
         <img
+          src="/kit/villa.webp"
+          alt="Sample photo of a villa exterior"
+          width={800}
+          height={800}
+          loading="lazy"
+        />
+        <img
+          src="/kit/living.webp"
+          alt="Sample photo of a living room"
+          width={800}
+          height={800}
+          loading="lazy"
+        />
+        <img
+          src="/kit/model.webp"
+          alt="Sample photo of an architectural model"
+          width={800}
+          height={800}
+          loading="lazy"
+        />
+        <img
+          className="phone"
           src="/kit/hero-phone.webp"
-          alt="Sample of a buyer chat on a phone"
+          alt="Phone showing a WhatsApp chat about a property enquiry"
           width={720}
           height={1280}
           loading="lazy"
