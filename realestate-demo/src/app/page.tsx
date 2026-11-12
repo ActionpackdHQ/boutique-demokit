@@ -9,7 +9,6 @@ import {
 import { CtaLink } from "@/components/cta-link";
 import { DemoVideo } from "@/components/demo-video";
 import {
-  ACTIONPACKD_SITE,
   ACTIONPACKD_WHATSAPP_DISPLAY,
   CRESTORA_AGENT,
   CRESTORA_DEMO,
@@ -190,19 +189,10 @@ export default function Home() {
       <h2 id="contact">Contact</h2>
       <div className="card contact-card">
         <p className="contact-line">
-          <a href={agentChatHref}>
-            Chat with the AI agent on WhatsApp
-            <br />
-            {ACTIONPACKD_WHATSAPP_DISPLAY}
-          </a>
-        </p>
-        <p className="contact-line">
-          <a href={ACTIONPACKD_SITE}>actionpackd.com</a>
-        </p>
-        <p className="contact-line">
-          <a href={HELLO_AGENT}>hello.actionpackd.com</a>
+          <a href={agentChatHref}>{ACTIONPACKD_WHATSAPP_DISPLAY}</a>
         </p>
       </div>
+      <CtaLink href={HELLO_AGENT}>hello.actionpackd.com</CtaLink>
 
       <footer>Actionpackd · A sample project for this demo. Not a live listing.</footer>
     </div>
