@@ -13,6 +13,7 @@ export function whatsAppHref(text: string) {
 }
 
 export const TRY_IT_YOURSELF = whatsAppHref(REAL_ESTATE_WHATSAPP_TEXT);
+export const PDF_HREF = "/actionpackd-realestate-sheet.pdf";
 
 export const PRODUCTS = [
   {

@@ -7,6 +7,7 @@ import {
   CRESTORA_AGENT,
   CRESTORA_DEMO,
   HELLO_AGENT,
+  PDF_HREF,
   PRODUCTS,
   REAL_ESTATE_WHATSAPP_TEXT,
   TRY_IT_YOURSELF,
@@ -176,7 +177,13 @@ export default function Home() {
         and books the visit.
       </p>
       <CtaLink href={CRESTORA_DEMO}>Open the Crestora demo</CtaLink>
-      <CtaLink href={CRESTORA_AGENT} variant="secondary">
+      <CtaLink href={PDF_HREF} download="Actionpackd-realestate-sheet.pdf" variant="outline">
+        Download the 1-page sheet (PDF)
+      </CtaLink>
+      <CtaLink href={TRY_IT_YOURSELF} variant="secondary">
+        Message us on WhatsApp to get it
+      </CtaLink>
+      <CtaLink href={CRESTORA_AGENT} variant="outline">
         Open the AI agent
       </CtaLink>
 
