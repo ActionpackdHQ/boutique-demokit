@@ -1,10 +1,4 @@
-import {
-  Bell,
-  CalendarCheck,
-  ClipboardList,
-  Globe,
-  Images,
-} from "lucide-react";
+import { Briefcase, CalendarCheck, FileText, Key } from "lucide-react";
 
 import { CtaLink } from "@/components/cta-link";
 import { DemoVideo } from "@/components/demo-video";
@@ -131,11 +125,26 @@ export default function Home() {
       <div className="team">
         <div className="card team-card">
           <span className="team-icon" aria-hidden="true">
-            <ClipboardList />
+            <Key />
           </span>
           <div>
             <b>Lead Qualifier</b>
-            <p>Asks area, budget, BHK and timeline while the enquiry is still warm.</p>
+            <p>
+              Asks area, budget, BHK and timeline while the buyer is still excited. Only serious
+              buyers reach you.
+            </p>
+          </div>
+        </div>
+        <div className="card team-card">
+          <span className="team-icon" aria-hidden="true">
+            <FileText />
+          </span>
+          <div>
+            <b>Brochure Desk</b>
+            <p>
+              Sends photos, floor plans and the location pin the moment they ask. No &quot;will send
+              tomorrow&quot;.
+            </p>
           </div>
         </div>
         <div className="card team-card">
@@ -144,34 +153,19 @@ export default function Home() {
           </span>
           <div>
             <b>Site Visit Booker</b>
-            <p>Books the visit and sends a reminder, so Sunday evening does not slip past.</p>
+            <p>
+              Locks the Sunday visit and reminds them the night before, so no one forgets to show
+              up.
+            </p>
           </div>
         </div>
         <div className="card team-card">
           <span className="team-icon" aria-hidden="true">
-            <Images />
+            <Briefcase />
           </span>
           <div>
-            <b>Brochure on demand</b>
-            <p>Sends photos, floor plans and the location the moment they ask.</p>
-          </div>
-        </div>
-        <div className="card team-card">
-          <span className="team-icon" aria-hidden="true">
-            <Bell />
-          </span>
-          <div>
-            <b>Follow-up</b>
-            <p>Re-opens quiet buyers with messages a person has already approved.</p>
-          </div>
-        </div>
-        <div className="card team-card">
-          <span className="team-icon" aria-hidden="true">
-            <Globe />
-          </span>
-          <div>
-            <b>NRI Buyer Desk</b>
-            <p>Answers Gulf and US enquiries after your office has closed.</p>
+            <b>You still close the deal.</b>
+            <p>Every chat is in front of you, and you can jump in whenever you want.</p>
           </div>
         </div>
       </div>
