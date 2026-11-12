@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 
 import { CtaLink } from "@/components/cta-link";
+import { DemoVideo } from "@/components/demo-video";
 import {
   ACTIONPACKD_SITE,
   ACTIONPACKD_WHATSAPP_DISPLAY,
@@ -123,6 +124,9 @@ export default function Home() {
           {product.body}
         </div>
       ))}
+
+      <h2>Watch in 30 seconds</h2>
+      <DemoVideo />
 
       <h2 id="team">Your team that never sleeps</h2>
       <div className="team">
