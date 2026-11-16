@@ -26,7 +26,11 @@ export function Hero() {
               Live<span className="stop">.</span>
             </span>
           </h1>
-          <p className="lede">One Sunday. One idea. Your first bot.</p>
+          <p className="lede">
+            One Sunday. One idea.
+            <br />
+            Your first bot.
+          </p>
         </div>
         <motion.div className="hero-visual" style={{ y }}>
           <HeroVisual />

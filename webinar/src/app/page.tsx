@@ -1,3 +1,4 @@
+import { CursorGlow } from "@/components/cursor-glow";
 import { Dock } from "@/components/dock";
 import { Hero } from "@/components/hero";
 import { RegisterLink } from "@/components/register-link";
@@ -38,6 +39,7 @@ export default function Home() {
     <>
       <header className="nav">
         <a className="wordmark" href="#top">
+          <span className="brand-mark">AP</span>
           Actionpackd
         </a>
         <RegisterLink className="nav-register">Register</RegisterLink>
@@ -100,7 +102,7 @@ export default function Home() {
           </Reveal>
         </section>
 
-        <section id="certificate" className="section ribbon-block">
+        <section id="certificate" className="section">
           <Reveal>
             <h2>Your certificate.</h2>
             <p className="caption">Every participant gets one, with their own Bot ID.</p>
@@ -157,6 +159,7 @@ export default function Home() {
         <a href={WHATSAPP_CONTACT}>WhatsApp +91 81900 07072</a>
       </footer>
 
+      <CursorGlow />
       <Dock />
     </>
   );

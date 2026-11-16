@@ -43,7 +43,13 @@ export function RegisterLink({ children, className, magnetic = false }: Register
         const y = event.clientY - (box.top + box.height / 2);
         setShift({ x: x * 0.22, y: y * 0.32 });
       }}
-      onMouseLeave={() => setShift({ x: 0, y: 0 })}
+      onMouseEnter={() => {
+        document.documentElement.dataset.ctaHover = "1";
+      }}
+      onMouseLeave={() => {
+        setShift({ x: 0, y: 0 });
+        delete document.documentElement.dataset.ctaHover;
+      }}
     >
       {children}
     </a>

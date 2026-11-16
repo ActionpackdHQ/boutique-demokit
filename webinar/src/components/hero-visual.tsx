@@ -20,22 +20,24 @@ function webglAvailable() {
 export function HeroVisual() {
   const [live, setLive] = useState(false);
   const [ready, setReady] = useState(false);
+  const [mode, setMode] = useState<"pointer" | "touch">("pointer");
 
   useEffect(() => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const desktop = window.matchMedia("(min-width: 900px)").matches;
+    const touch = window.matchMedia("(pointer: coarse)").matches;
     const connection = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
     const memory = (navigator as Navigator & { deviceMemory?: number }).deviceMemory;
     const lowMemory = typeof memory === "number" && memory > 0 && memory <= 2;
-    if (!reduce && desktop && !connection?.saveData && !lowMemory && webglAvailable()) {
+    setMode(touch ? "touch" : "pointer");
+    if (!reduce && !connection?.saveData && !lowMemory && webglAvailable()) {
       setLive(true);
     }
   }, []);
 
   return (
     <div className="hero-stage" data-ready={ready ? "true" : "false"} aria-hidden="true">
-      <div className="orb-fallback" />
-      {live ? <BotCanvas onReady={() => setReady(true)} /> : null}
+      <div className="bot-fallback" />
+      {live ? <BotCanvas onReady={() => setReady(true)} mode={mode} /> : null}
     </div>
   );
 }

@@ -1,18 +1,17 @@
 import type { Metadata } from "next";
-import { Outfit, Syne } from "next/font/google";
+import { Bricolage_Grotesque, Plus_Jakarta_Sans } from "next/font/google";
 
 import "./globals.css";
 
-const outfit = Outfit({
+const display = Bricolage_Grotesque({
   subsets: ["latin"],
-  variable: "--font-outfit",
+  variable: "--font-display",
   display: "swap",
 });
 
-const syne = Syne({
+const body = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["700", "800"],
-  variable: "--font-syne",
+  variable: "--font-body",
   display: "swap",
 });
 
@@ -28,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${outfit.variable} ${syne.variable}`}>
+    <html lang="en" className={`${display.variable} ${body.variable}`}>
       <body>{children}</body>
     </html>
   );
