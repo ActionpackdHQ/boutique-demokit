@@ -1,11 +1,11 @@
 :root {
-  --bg: #070708;
-  --ink: #f6f1e8;
-  --muted: #a39c93;
-  --line: rgba(246, 241, 232, 0.14);
-  --copper: #e0b48a;
-  --spot: rgba(255, 236, 214, 0.16);
-  color-scheme: dark;
+  --bg: #fbf8f3;
+  --ink: #141210;
+  --muted: #4e4943;
+  --line: rgba(20, 18, 16, 0.14);
+  --red: #c8102e;
+  --gold: #c9a24a;
+  color-scheme: light;
 }
 
 * {
@@ -19,23 +19,15 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
+  overflow-x: hidden;
   background:
-    radial-gradient(ellipse 48% 36% at 72% 8%, var(--spot), transparent 62%),
-    radial-gradient(ellipse 30% 22% at 18% 0%, rgba(255, 244, 230, 0.05), transparent 70%),
+    radial-gradient(ellipse 46% 28% at 82% 0%, rgba(255, 255, 255, 0.95), transparent 62%),
+    radial-gradient(ellipse 32% 22% at 0% 8%, rgba(200, 16, 46, 0.06), transparent 58%),
     var(--bg);
   color: var(--ink);
   font-family: var(--font-outfit), sans-serif;
   font-size: 18px;
   line-height: 1.5;
-}
-
-body::before {
-  content: "";
-  pointer-events: none;
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(ellipse 18% 42% at 70% 18%, rgba(255, 248, 236, 0.08), transparent 70%);
-  z-index: 0;
 }
 
 a {
@@ -45,7 +37,7 @@ a {
 
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid var(--copper);
+  outline: 2px solid var(--red);
   outline-offset: 3px;
 }
 
@@ -73,11 +65,12 @@ main,
 }
 
 .nav-register {
-  border: 1px solid var(--line);
   border-radius: 999px;
   padding: 8px 16px;
+  background: var(--red);
+  color: #fff;
   font-size: 14px;
-  font-weight: 650;
+  font-weight: 700;
 }
 
 .hero,
@@ -116,7 +109,7 @@ main,
 .kicker {
   display: block;
   margin: 0 0 14px;
-  color: var(--copper);
+  color: var(--red);
   font-size: 14px;
   font-weight: 560;
   letter-spacing: 0.16em;
@@ -132,7 +125,7 @@ main,
 }
 
 .stop {
-  color: var(--copper);
+  color: var(--red);
 }
 
 h1,
@@ -172,7 +165,7 @@ h2 {
 
 .soon {
   margin-top: 6px;
-  color: var(--copper);
+  color: var(--red);
   font-size: 14px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -228,15 +221,15 @@ h2 {
   min-width: 180px;
   padding: 16px 28px;
   border-radius: 999px;
-  background: #f6f1e8;
-  color: #14120f;
+  background: var(--red);
+  color: #fff;
   font-weight: 700;
   letter-spacing: -0.02em;
-  box-shadow: 0 0 0 1px rgba(255, 244, 230, 0.2), 0 16px 50px rgba(255, 214, 170, 0.16);
+  box-shadow: 0 14px 34px rgba(200, 16, 46, 0.22);
 }
 
 .btn:hover {
-  background: #fffaf3;
+  background: #a50d26;
 }
 
 .section {
@@ -270,7 +263,7 @@ h2 {
 
 .beats li span,
 .agenda li span {
-  color: var(--copper);
+  color: var(--red);
   font-family: var(--font-syne), sans-serif;
   font-size: 14px;
   letter-spacing: 0.08em;
@@ -333,26 +326,26 @@ h2 {
   font-size: 1.15rem;
 }
 
-.certificate {
-  display: grid;
-  place-items: center;
-  aspect-ratio: 1.5 / 1;
-  max-width: 760px;
-  margin-top: 8px;
-  border: 1px solid var(--line);
-  background:
-    linear-gradient(180deg, rgba(255, 244, 230, 0.04), transparent 40%),
-    rgba(255, 255, 255, 0.015);
-  box-shadow: inset 0 0 0 10px rgba(7, 7, 8, 0.65);
+.caption {
+  max-width: 28em;
+  margin: -8px 0 22px;
+  color: var(--muted);
+  font-size: 1.08rem;
 }
 
-.certificate p {
-  margin: 0;
-  max-width: 12em;
-  text-align: center;
-  color: var(--muted);
-  font-size: clamp(1.2rem, 2vw, 1.6rem);
-  letter-spacing: -0.03em;
+.certificate {
+  margin: 8px 0 0;
+  max-width: 860px;
+  background: #fff;
+  border: 1px solid var(--gold);
+  box-shadow: 0 22px 56px rgba(20, 18, 16, 0.12);
+  transform-origin: center center;
+}
+
+.certificate img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .finale {
@@ -389,7 +382,7 @@ h2 {
   justify-content: space-between;
   gap: 12px;
   padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
-  background: rgba(7, 7, 8, 0.9);
+  background: rgba(251, 248, 243, 0.94);
   border-top: 1px solid var(--line);
   backdrop-filter: blur(12px);
 }
@@ -426,23 +419,25 @@ h2 {
 .orb-fallback {
   border-radius: 50%;
   background:
-    radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.55), transparent 16%),
-    radial-gradient(circle at 50% 40%, #3c414c 0%, #14161c 42%, #070708 74%);
+    radial-gradient(circle at 32% 26%, rgba(255, 255, 255, 0.98), transparent 18%),
+    radial-gradient(circle at 70% 78%, rgba(200, 16, 46, 0.18), transparent 28%),
+    radial-gradient(circle at 50% 42%, #fff 0%, #f4efe6 40%, #ddd4c6 78%);
   box-shadow:
-    inset -16px -22px 36px rgba(0, 0, 0, 0.55),
-    0 24px 70px rgba(0, 0, 0, 0.35);
+    inset -16px -20px 30px rgba(90, 40, 40, 0.16),
+    0 0 0 6px rgba(201, 162, 74, 0.55),
+    0 22px 48px rgba(20, 18, 16, 0.14);
 }
 
 .orb-fallback::before,
 .orb-fallback::after {
   content: "";
   position: absolute;
-  top: 43%;
-  width: 14px;
-  height: 14px;
+  top: 42%;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
-  background: #fff6e8;
-  box-shadow: 0 0 14px rgba(255, 236, 210, 0.9);
+  background: var(--red);
+  box-shadow: 0 0 12px rgba(200, 16, 46, 0.45);
 }
 
 .orb-fallback::before {
@@ -456,6 +451,14 @@ h2 {
 .bot-canvas {
   width: 100% !important;
   height: 100% !important;
+}
+
+@media (max-width: 899px) {
+  #certificate::before,
+  #certificate::after,
+  #register::after {
+    display: none;
+  }
 }
 
 @media (min-width: 900px) {
@@ -497,6 +500,52 @@ h2 {
   }
 }
 
+.hero,
+#certificate,
+#register {
+  position: relative;
+}
+
+#certificate::before,
+#certificate::after,
+#register::after {
+  content: "";
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#certificate::before {
+  top: 24px;
+  right: -28px;
+  background: linear-gradient(225deg, #111 0 32%, var(--red) 32% 60%, var(--gold) 60% 68%, transparent 68%);
+}
+
+#certificate::after {
+  right: -28px;
+  bottom: 12px;
+  background: linear-gradient(315deg, #111 0 32%, var(--red) 32% 60%, var(--gold) 60% 68%, transparent 68%);
+}
+
+#register::after {
+  left: -36px;
+  bottom: 48px;
+  background: linear-gradient(45deg, #111 0 30%, var(--red) 30% 58%, var(--gold) 58% 66%, transparent 66%);
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .certificate {
+    transition: transform 0.55s ease, box-shadow 0.55s ease;
+  }
+
+  .certificate:hover {
+    transform: perspective(1400px) rotateX(3.5deg) rotateY(-6deg);
+    box-shadow: 0 34px 70px rgba(20, 18, 16, 0.18);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -504,5 +553,11 @@ h2 {
 
   .bot-canvas {
     display: none;
+  }
+
+  .certificate,
+  .certificate:hover {
+    transform: none;
+    transition: none;
   }
 }

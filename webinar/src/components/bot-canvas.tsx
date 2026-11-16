@@ -37,48 +37,48 @@ function BotHead() {
     <group>
       <group ref={ring}>
         <mesh>
-          <torusGeometry args={[1.62, 0.008, 12, 90]} />
-          <meshBasicMaterial color="#e7c7a4" transparent opacity={0.55} />
+          <torusGeometry args={[1.62, 0.012, 12, 90]} />
+          <meshStandardMaterial color="#c9a24a" metalness={0.8} roughness={0.25} />
         </mesh>
       </group>
       <group ref={ref}>
         <mesh>
           <sphereGeometry args={[1, 48, 48]} />
           <meshPhysicalMaterial
-            color="#16181e"
-            metalness={0.94}
+            color="#f7f4ee"
+            metalness={0.25}
             roughness={0.16}
             clearcoat={1}
-            clearcoatRoughness={0.08}
+            clearcoatRoughness={0.06}
           />
         </mesh>
         <mesh position={[0, -1.05, 0]}>
           <cylinderGeometry args={[0.28, 0.36, 0.28, 24]} />
-          <meshStandardMaterial color="#0c0d11" metalness={0.8} roughness={0.3} />
+          <meshStandardMaterial color="#1a1a1a" metalness={0.7} roughness={0.28} />
         </mesh>
         <mesh position={[0, 1.05, 0]}>
           <cylinderGeometry args={[0.03, 0.03, 0.34, 12]} />
-          <meshStandardMaterial color="#c9b39a" metalness={0.7} roughness={0.25} />
+          <meshStandardMaterial color="#c9a24a" metalness={0.75} roughness={0.22} />
         </mesh>
         <mesh position={[0, 1.24, 0]}>
           <sphereGeometry args={[0.055, 16, 16]} />
-          <meshStandardMaterial color="#fff4e4" emissive="#ffe3bf" emissiveIntensity={3} />
+          <meshStandardMaterial color="#c8102e" emissive="#c8102e" emissiveIntensity={1.6} />
         </mesh>
         <mesh position={[0, 0.08, 0.78]}>
           <boxGeometry args={[0.92, 0.16, 0.18]} />
-          <meshStandardMaterial color="#07080b" metalness={1} roughness={0.18} />
+          <meshStandardMaterial color="#c8102e" metalness={0.6} roughness={0.22} />
         </mesh>
         <mesh position={[-0.28, 0.1, 0.9]}>
           <sphereGeometry args={[0.075, 20, 20]} />
-          <meshStandardMaterial color="#fff8ee" emissive="#fff1d4" emissiveIntensity={2.4} />
+          <meshStandardMaterial color="#c8102e" emissive="#c8102e" emissiveIntensity={1.4} />
         </mesh>
         <mesh position={[0.28, 0.1, 0.9]}>
           <sphereGeometry args={[0.075, 20, 20]} />
-          <meshStandardMaterial color="#fff8ee" emissive="#fff1d4" emissiveIntensity={2.4} />
+          <meshStandardMaterial color="#c8102e" emissive="#c8102e" emissiveIntensity={1.4} />
         </mesh>
         <mesh position={[0, -0.28, 0.9]}>
           <boxGeometry args={[0.34, 0.035, 0.04]} />
-          <meshStandardMaterial color="#efe2d2" emissive="#d9c2a4" emissiveIntensity={0.4} />
+          <meshStandardMaterial color="#1a1a1a" metalness={0.4} roughness={0.35} />
         </mesh>
       </group>
     </group>
@@ -98,15 +98,16 @@ export default function BotCanvas({ onReady }: { onReady?: () => void }) {
           onReady?.();
         }}
       >
-        <ambientLight intensity={0.05} />
+        <ambientLight intensity={0.72} />
         <spotLight
-          position={[1.2, 4.4, 3.4]}
-          angle={0.34}
-          penumbra={1}
-          intensity={36}
-          color="#fff4e6"
+          position={[1.4, 4.6, 3.6]}
+          angle={0.4}
+          penumbra={0.85}
+          intensity={48}
+          color="#fffaf4"
         />
-        <directionalLight position={[-3.2, 0.4, -1.4]} intensity={0.7} color="#7f93b8" />
+        <directionalLight position={[-3.2, 1.2, 2]} intensity={1.4} color="#ffffff" />
+        <pointLight position={[2.2, -0.4, 2.4]} intensity={6} color="#c8102e" />
         <BotHead />
       </Canvas>
     </SceneBoundary>

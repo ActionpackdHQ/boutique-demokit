@@ -100,12 +100,21 @@ export default function Home() {
           </Reveal>
         </section>
 
-        <section id="certificate" className="section">
+        <section id="certificate" className="section ribbon-block">
           <Reveal>
-            <h2>Certificate</h2>
-            <div className="certificate">
-              <p>Certificate preview coming soon</p>
-            </div>
+            <h2>Your certificate.</h2>
+            <p className="caption">Every participant gets one, with their own Bot ID.</p>
+            <figure className="certificate">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/certificate.webp"
+                alt="Sample certificate of participation for Dream it. Bot it. Live."
+                width={1600}
+                height={1100}
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
           </Reveal>
         </section>
 
