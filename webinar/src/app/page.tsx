@@ -109,8 +109,8 @@ export default function Home() {
               <img
                 src="/certificate.webp"
                 alt="Sample certificate of participation for Dream it. Bot it. Live."
-                width={1600}
-                height={1100}
+                width={1492}
+                height={1054}
                 loading="lazy"
                 decoding="async"
               />
