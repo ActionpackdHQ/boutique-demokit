@@ -1,47 +1,38 @@
 # Actionpackd demo kit
 
-Mobile-first sales page for Actionpackd. It shows **Agents, Bots, Shops, and Sites**, and links the [Aavarna boutique demo](https://aavarna-boutique.vercel.app/).
+Three separate Next.js apps live in this repo. None of them need an account, a database, or an API key.
 
-No account, database, or API key. Visitors reach the agent on WhatsApp at +91 81900 07072 or at [hello.actionpackd.com](https://hello.actionpackd.com).
+| Folder | What it is | Live |
+| --- | --- | --- |
+| `/` | Boutique sales demo kit | https://actionpackd-boutiquedemo.vercel.app/ |
+| `realestate-demo/` | Real-estate sales demo kit | https://actionpackd-realestatedemo.vercel.app/ |
+| `webinar/` | Student webinar page, Dream it. Bot it. Live. | https://actionpackd-dream-it-bot-it.vercel.app/ |
 
-## Run locally
+Run one app at a time. Each one uses port 3000.
+
+## Boutique kit (repo root)
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Open http://localhost:3000.
+
+## Real-estate kit
 
 ```bash
-npm test
-npm run lint
-npm run build
-npm start
+cd realestate-demo
+npm install
+npm run dev
 ```
 
-## Deploy
-
-The app is a Next.js site with files in `public/`. It does not need environment variables.
-
-On Vercel (or any Next.js host):
-
-1. Import this project.
-2. Use the Next.js preset. Build command: `npm run build`. Start command: `npm start`.
-3. Leave environment variables empty.
-4. Deploy.
-
-The one-page sheet is a static file at `/actionpackd-demo-kit.pdf`.
-
-## Regenerate the PDF
-
-Requires Python, `fpdf2`, and Liberation Sans (installed on the machine that builds the sheet).
+## Webinar
 
 ```bash
-pip install fpdf2
-npm run sheet
+cd webinar
+npm install
+npm run dev
 ```
 
-## Placeholders
-
-- The 30-second demo plays from `public/actionpackd-demo-video.mp4`. It starts muted when the section is on screen.
+The one-page PDF sheets are static files in each app's `public/` folder. Rebuild the boutique sheet with `npm run sheet` from the repo root (needs Python, `fpdf2`, and Liberation Sans). Rebuild the real-estate sheet with `python3 realestate-demo/scripts/build-sheet.py`.
